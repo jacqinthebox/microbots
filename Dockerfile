@@ -11,7 +11,7 @@ RUN apt-get clean
 
 # we are using vim
 ADD vimrc /root/.vimrc
-RUN echo 'export EDITOR=$(which vim)'  >> ~/.bash_profile
+RUN echo 'export EDITOR=$(which vim)'  >> ~/.bashrc
 
 VOLUME ["/data"]
 CMD ["bash"]
