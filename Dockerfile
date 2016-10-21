@@ -9,7 +9,9 @@ RUN curl https://omnitruck.chef.io/install.sh | bash -s -- -c current -P chefdk
 # cleanup
 RUN apt-get clean
 
-# presets
+# we are using vim
 ADD vimrc /root/.vimrc
+RUN echo 'export EDITOR=$(which vim)'  >> ~/.bash_profile
+
 VOLUME ["/data"]
 CMD ["bash"]
