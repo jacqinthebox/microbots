@@ -1,5 +1,5 @@
 ## Description
-Docker image with ChefDK and vim editing, including the [https://github.com/scrooloose/nerdtree](NERDTree).
+Docker image with ChefDK and vim editing, including the (https://github.com/scrooloose/nerdtree)[NERDTree].
 Toggle NERDTree with F5.   
 
 ## Usage
