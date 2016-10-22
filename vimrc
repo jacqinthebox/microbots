@@ -11,33 +11,19 @@ set binary
 set nocompatible
 set modeline
 syntax on
-" tab shortcuts
-map <C-e> :tabedit 
-map <C-n> :tabnew<CR>
-map <C-d> :tabclose<CR>
-nmap <M-Left> :tabprevious<CR>
-nmap <M-Right> :tabnext<CR>
-
-" set default comment color to cyan instead of darkblue
-" which is not very legible on a black background
-highlight comment ctermfg=cyan
-
-" turn off auto adding comments on next line
-" so you can cut and paste reliably
-set fo=tcq
-
-" no literal tabs
-set expandtab
+colorscheme desert
+set paste
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+map <F7> mzgg=G`z<CR>
 
-" highlight search
-set hls
 
-" replace real tabs by '>' char
-set list
-set listchars=tab:\|>,nbsp:^
-
-" Show me a ruler
-set ruler
+"for nerdtree
+set encoding=utf-8
+execute pathogen#infect()
+let NERDTreeShowHidden=1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd vimenter * if !argc() | NERDTree | endif
+map <F5> :NERDTreeToggle<CR>
+let g:NERDTreeDirArrows=0
